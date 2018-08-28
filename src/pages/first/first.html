@@ -1,0 +1,142 @@
+<!--
+  Generated template for the FirstPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Main Page</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-grid style="background-color: #b0b0e7;">
+        <ion-row>
+            <ion-col col-12>
+                <ion-card style="background-color: #9a9ae7;">
+                    <ion-card-header>
+                        Member Management
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-list>
+                            <ion-item style="background: #bfbff5;">
+                                <ion-icon name="man" style="color: #9a9ae7;" item-start></ion-icon>
+                                Total Packages:{{totalMember}}
+                            </ion-item>
+                            <ion-item style="background: #bfbff5;">
+                                <ion-icon name="man" style="color: #9a9ae7;" item-start></ion-icon>
+                                Un.. Packages:{{unMember}}
+                            </ion-item>
+                            <ion-item style="background: #bfbff5;">
+                                <ion-icon name="man" style="color: #9a9ae7;" item-start></ion-icon>
+                                Lite Packages:{{liteMember}}
+                            </ion-item>
+                            <p style="border: solid 1px;border-color: #8585ea;"></p>
+                        </ion-list>
+                        <ion-list (tap)=goAffiliate($event)>
+                            <ion-item>
+                                <ion-icon name="contact" style="color: #9a9ae7;" item-start></ion-icon>
+                                Affiliate
+                                <ion-badge color="" item-end>{{affiliateNumber}}</ion-badge>
+                            </ion-item>
+                            <p style="border: solid 1px;border-color: #8585ea;"></p>
+                        </ion-list>
+                        <ion-list (tap)="goDreactTeam($event)">
+                            <ion-item>
+                                <ion-icon name="contacts" style="color: #9a9ae7;" item-start></ion-icon>
+                                Dirrect Team
+                                <ion-badge color="" item-end>{{directTeamNumber}}</ion-badge>
+                            </ion-item>
+                            <p style="border: solid 1px;border-color: #8585ea;"></p>
+                        </ion-list>
+                        <ion-list (tap)="goClient($event)">
+                            <ion-item>
+                                <ion-icon name="contacts" style="color: #9a9ae7;" item-start></ion-icon>
+                                Client
+                                <ion-badge color="" item-end>{{clientNumber}}</ion-badge>
+                            </ion-item>
+                            <p style="border: solid 1px;border-color: #8585ea;"></p>
+                        </ion-list>
+                    </ion-card-content>
+                </ion-card>
+
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                <ion-card (tap)="pressEvent($event)" style="background-color: #9a9ae7;">
+                    <ion-card-header>
+                        GO Mangement
+                    </ion-card-header>
+                    <ion-card-content>
+
+                        <ion-list>
+                            <ion-item>
+                                <ion-icon name="arrow-dropleft-circle" style="color: #9a9ae7;" item-start></ion-icon>
+                                Totoal GO:{{tototalGo}}
+                            </ion-item>
+                            <p style="border: solid 1px;border-color: #8585ea;"></p>
+                        </ion-list>
+                        <ion-list>
+                            <ion-item>
+                                <ion-icon name="aperture" style="color: #9a9ae7;" item-start></ion-icon>
+                                Pending GO:{{pendingGo}}
+                            </ion-item>
+                            <p style="border: solid 1px;border-color: #8585ea;"></p>
+                        </ion-list>
+
+                        <ion-list>
+                            <ion-item>
+                                <ion-icon name="arrow-dropright-circle" style="color: #9a9ae7;" item-start></ion-icon>
+                                Available GO:{{availableGo}}
+                            </ion-item>
+                            <p style="border: solid 1px;border-color: #8585ea;"></p>
+                        </ion-list>
+                    </ion-card-content>
+                </ion-card>
+
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                <ion-card style="background-color: #9a9ae7;">
+                    <ion-card-header center>
+                        Notification
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-list (tap)="tempRegister($event)">
+                            <ion-item>
+                                <ion-icon name="person-add" color="default" item-start></ion-icon>
+                                New Users
+                                <ion-badge color="" item-end>{{newMember}}</ion-badge>
+                            </ion-item>
+                            <p style="border: solid 1px;border-color: #8585ea;"></p>
+                        </ion-list>
+                        <ion-list (tap)="goPurchase($event)">
+                            <ion-item>
+                                <ion-icon name="notifications" color="secondary" item-start></ion-icon>
+                                Purchase
+                                <ion-badge color="secondary" item-end>{{purchases}}</ion-badge>
+                            </ion-item>
+                            <p style="border: solid 1px;border-color: #8585ea;"></p>
+                        </ion-list>
+                        <ion-list (tap)="goWithdraw($event)">
+                            <ion-item>
+                                <ion-icon name="notifications" color="danger" item-start></ion-icon>
+                                Withdraw
+                                <ion-badge color="danger" item-end>{{withdraws}}</ion-badge>
+                            </ion-item>
+                            <p style="border: solid 1px;border-color: #8585ea;"></p>
+                        </ion-list>
+                    </ion-card-content>
+                </ion-card>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

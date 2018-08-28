@@ -1,0 +1,169 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Detail Member</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background: #ababe3;">
+    <ion-card>
+
+        <ion-item>
+            <ion-avatar item-start>
+                <img [src]="memberDetail.img" />
+            </ion-avatar>
+            <h2>{{memberDetail.username}}</h2>
+            <p>{{memberDetail.email}}</p>
+        </ion-item>
+
+        <!-- <img src="../../assets/imgs/2.jpg"> -->
+
+        <ion-card-content>
+            <h2>My RefID:{{memberDetail.referralID_mine}}</h2>
+            <h2>Parent RefID:{{memberDetail.referralID_parent}}</h2>
+        </ion-card-content>
+        <ion-row>
+            <ion-col>
+                <button ion-button color="light" small>
+                    <ion-icon >To..GO:</ion-icon>
+                    <div>{{memberDetail.GO.totoalGO}}</div>
+                </button>
+            </ion-col>
+            <ion-col>
+                <button ion-button color="light" small>
+                     <ion-icon >Pe..GO: </ion-icon>
+                     <div>{{memberDetail.GO.pendingGo}}</div>
+                </button>
+            </ion-col>
+            <ion-col center text-center>
+
+                <button ion-button color="light" small>
+                        <ion-icon >Av..GO: </ion-icon>
+                        <div> {{memberDetail.GO.availableGO}}</div>
+                </button>
+            </ion-col>
+        </ion-row>
+        <ion-item *ngIf="member_state == 0">
+            <button ion-button icon-end primary (tap)="promotingDirect(memberDetail)" id={{memberDetail.key}}>PromotingDirectTeam</button>
+        </ion-item>
+        <ion-item *ngIf="member_state == 1">
+            <button ion-button icon-end primary (tap)="promotingAffiliate(memberDetail)" id={{memberDetail.key}}>PromotingAffiliate</button>
+        </ion-item>
+    </ion-card>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-4 (tap)="showPurchase($event)">
+                <button ion-button icon-start outline>
+                    <ion-icon name="arrow-dropright-circle"></ion-icon>
+                        Purchase
+               </button>
+            </ion-col>
+            <ion-col col-4 (tap)="showWithdraw($event)">
+                <button ion-button icon-start outline>
+                    <ion-icon name="arrow-dropleft-circle"></ion-icon>
+                        Withdraw
+                   </button>
+            </ion-col>
+            <ion-col col-4 (tap)="showReward($event)">
+                <button ion-button icon-start outline>
+                    <ion-icon name="home"></ion-icon>
+                        Reward
+                </button>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+    <ion-list style="background: #ceceec;" *ngIf="state == 0">
+
+        <p style="border: solid 1px;border-color: #8585ea;"></p>
+        <ion-row>
+            <ion-col col-3>Date</ion-col>
+            <ion-col col-3>Method</ion-col>
+            <ion-col col-3>Address</ion-col>
+            <ion-col col-3>
+                <ion-badge color="" item-end>Amount</ion-badge>
+            </ion-col>
+        </ion-row>
+        <p style="border: solid 1px;border-color: #8585ea;"></p>
+
+        <ion-row *ngFor="let purcha of purchase">
+            <ion-col col-3>{{purcha.date}}</ion-col>
+            <ion-col col-3>{{purcha.method}}</ion-col>
+            <ion-col col-3>{{purcha.btcaddress}}</ion-col>
+            <ion-col col-3>
+                <ion-badge color="" item-end>{{purcha.amount}}</ion-badge>
+            </ion-col>
+        </ion-row>
+
+    </ion-list>
+    <ion-list style="background: #ceceec;" *ngIf="state == 1">
+
+        <p style="border: solid 1px;border-color: #8585ea;"></p>
+        <ion-row>
+            <ion-col col-3>Date</ion-col>
+            <ion-col col-3>Method</ion-col>
+            <ion-col col-3>Address</ion-col>
+            <ion-col col-3>
+                <ion-badge color="" item-end>Amount</ion-badge>
+            </ion-col>
+        </ion-row>
+        <p style="border: solid 1px;border-color: #8585ea;"></p>
+
+        <ion-row *ngFor="let withd of withdraw">
+            <ion-col col-3>{{withd.date}}</ion-col>
+            <ion-col col-3>{{withd.method}}</ion-col>
+            <ion-col col-3>{{withd.btcaddress}}</ion-col>
+            <ion-col col-3>
+                <ion-badge color="" item-end>{{withd.amount}}</ion-badge>
+            </ion-col>
+        </ion-row>
+
+    </ion-list>
+    <ion-list style="background: #ceceec;" *ngIf="state == 2">
+
+        <p style="border: solid 1px;border-color: #8585ea;"></p>
+        <ion-row>
+            <ion-col col-3>Date</ion-col>
+            <ion-col col-3>Method</ion-col>
+            <ion-col col-3>Address</ion-col>
+            <ion-col col-3>
+                <ion-badge color="" item-end>Amount</ion-badge>
+            </ion-col>
+        </ion-row>
+        <p style="border: solid 1px;border-color: #8585ea;"></p>
+
+        <ion-row *ngFor="let reward of rewards">
+            <ion-col col-3>{{reward.date}}</ion-col>
+            <ion-col col-3>{{reward.method}}</ion-col>
+            <ion-col col-3></ion-col>
+            <ion-col col-3>
+                <ion-badge color="" item-end>{{reward.amount}}</ion-badge>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let rewardcliente of rewardclient">
+            <ion-col col-3>{{rewardcliente.date}}</ion-col>
+            <ion-col col-3>{{rewardcliente.method}}</ion-col>
+            <ion-col col-3></ion-col>
+            <ion-col col-3>
+                <ion-badge color="" item-end>{{rewardcliente.coinsharingGO}}</ion-badge>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let rewardMonth of rewardMonths">
+            <ion-col col-3>{{rewardMonth.date}}</ion-col>
+            <ion-col col-3>{{rewardMonth.method}}</ion-col>
+            <ion-col col-3>Hosting:{{rewardMonth.commHosting}}</ion-col>
+            <ion-col col-3>
+                <ion-badge color="" item-end>GO:{{rewardMonth.commGO}}</ion-badge>
+            </ion-col>
+        </ion-row>
+    </ion-list>
+</ion-content>

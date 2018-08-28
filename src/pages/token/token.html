@@ -1,0 +1,92 @@
+<!--
+  Generated template for the TokenPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>GO</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<!-- <ion-content>
+       <ion-item>
+            <ion-label color="primary">Select Date</ion-label>
+            <ion-input placeholder="Input the Date" [value]="dataInicial | date:'dd-MM-yyyy'" (click)="open()"></ion-input>
+        </ion-item>
+
+        <ion-item hidden="true">
+            <ion-datetime #datePicker displayFormat="DD-MM-YYYY" (ionCancel)="this.dataInicial  = null" [(ngModel)]="dataInicial" doneText="OK" cancelText="Cancel" [max]="maxDate">
+            </ion-datetime>
+        </ion-item>
+    </ion-list>
+</ion-content> -->
+<ion-content style="background-color: #b0b0e7;">
+    <ion-card style="background-color: rgb(154, 154,231);">
+        <ion-item>
+            <ion-icon name="logo-bitcoin" item-start large></ion-icon>
+            <h1>Afilliate</h1>
+            <h4>Totoal GO :{{affiliateTotoalGos}}</h4>
+            <h4>Pending GO:{{affiliatePendingGos}}</h4>
+            <h4>Available GO:{{affiliateAvailableGos}}</h4>
+        </ion-item>
+        <ion-item>
+            <button ion-button icon-start clear item-start>
+                    <ion-icon name="navigate"></ion-icon>
+                        Lite Package:
+                </button>
+            <span item-start>{{affiliateLiteNumbers}}</span>
+            <button ion-button icon-start clear item-start>
+                <ion-icon name="navigate"></ion-icon>
+                 Unlimited Package:
+            </button>
+            <span item-start>{{affiliateUnlimitedNumbers}}</span>
+        </ion-item>
+    </ion-card>
+    <ion-card (tap)="goDirectTeamList($event)">
+        <ion-item>
+            <ion-icon name="logo-bitcoin" item-start large></ion-icon>
+            <h1>All Direct Teams</h1>
+            <h4>Totoal GO:{{directTeamTotoalGos}}</h4>
+            <h4>Pending GO:{{directTeamPendingGos}}</h4>
+            <h4>Available GO:{{directTeamAvailable}}</h4>
+        </ion-item>
+        <ion-item>
+            <button ion-button icon-start clear item-start>
+                    <ion-icon name="navigate"></ion-icon>
+                    Lite Package:
+                </button>
+            <span item-start>{{directTeamLiteNumbers}}</span>
+            <button ion-button icon-start clear item-start>
+                        <ion-icon name="navigate"></ion-icon>
+                        Unlimited Package:
+                    </button>
+            <span item-start>{{directTeamUnlimitedNumbers}}</span>
+        </ion-item>
+    </ion-card>
+    <ion-card (tap)="goClientsList($event)">
+        <ion-item>
+            <ion-icon name="logo-bitcoin" item-start large></ion-icon>
+            <h1>All Clients</h1>
+            <h4>Totoal GO:{{clientsTotoalGos}}</h4>
+            <h4>Pending GO:{{ciientsPendingGos}}</h4>
+            <h4>Available GO:{{clientsAvailableGos}}</h4>
+        </ion-item>
+        <ion-item>
+            <button ion-button icon-start clear item-start>
+                <ion-icon name="navigate"></ion-icon>
+                Lite Package:
+            </button>
+            <span item-start>{{clientsLiteNumbers}}</span>
+            <button ion-button icon-start clear item-start>
+                    <ion-icon name="navigate"></ion-icon>
+                    Unlimited Package:
+                </button>
+            <span item-start>{{clientsUnLimitedNumbers}}</span>
+        </ion-item>
+    </ion-card>
+</ion-content>

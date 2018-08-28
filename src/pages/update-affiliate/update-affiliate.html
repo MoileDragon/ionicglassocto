@@ -1,0 +1,25 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>
+            Affiliate
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-list *ngFor="let affilate of affilates">
+        <ion-item>
+            <ion-thumbnail item-start>
+                <!-- <img src="../../assets/imgs/1.jpg"> -->
+                <img [src]="affilate.img" />
+            </ion-thumbnail>
+            <h2>{{affilate.username}}</h2>
+            <p>{{affilate.email}}</p>
+            <button ion-button clear item-end (click)="go(affilate.key)">Detail</button>
+        </ion-item>
+
+    </ion-list>
+</ion-content>

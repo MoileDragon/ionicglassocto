@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title center>
+            LOG IN
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+    <ion-item>
+
+        <ion-avatar src="../../assets/imgs/logoss.png">
+            <img style="width: 60%;height: 60%;margin-left: 20%;" src="../../assets/imgs/logoss.png">
+        </ion-avatar>
+
+    </ion-item>
+
+    <ion-list *ngIf="state != 0">
+        <ion-item>
+            <ion-label floating>AdminName</ion-label>
+            <ion-input type="text" [(ngModel)]="data.username" name="UserName" required="" placeholder='AdminName'></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="data.password" name="Password" required="" placeholder='Password'></ion-input>
+        </ion-item>
+        <ion-item>
+            <button ion-button full color="primary" type="" style="height: 40px;margin-top: 15px;" (click)="Register($event)">Reset Password</button>
+        </ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="state == 0">
+        <ion-item>
+            <ion-label floating>AdminName</ion-label>
+            <ion-input type="text" [(ngModel)]="user.adminName" name="AdminName" required="" placeholder='Admin'></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="user.adminPass" name="adminPass" required="" placeholder='Pass'></ion-input>
+        </ion-item>
+        <ion-item>
+            <button ion-button full color="primary" (click)="login($event)" style="height: 40px;margin-top: 15px;">Log In</button>
+        </ion-item>
+
+        <ion-item>
+            <p (click)="signUp($event)">Forgot your password?</p>
+
+        </ion-item>
+    </ion-list>
+
+</ion-content>
